@@ -47,9 +47,9 @@ public class ConfigActivity extends AppCompatActivity {
 
 
         Log.i(TAG,"save:获取新的值");
-        Log.i(TAG,"savw:newDollar="+newDollar);
-        Log.i(TAG,"savw:newEuro="+newEuro);
-        Log.i(TAG,"savw:newWon="+newWon);
+        Log.i(TAG,"save:newDollar="+newDollar);
+        Log.i(TAG,"save:newEuro="+newEuro);
+        Log.i(TAG,"save:newWon="+newWon);
 
         //保存到Bundle或放入到Extra
         Intent intent = getIntent();

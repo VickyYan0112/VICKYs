@@ -10,13 +10,39 @@ public class Main2Activity extends AppCompatActivity {
 
     TextView score;
     TextView score1;
+    private final String TAG ="score";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basket);
+        Log.i(TAG,"onCreate:");
 
         score = (TextView)findViewById(R.id.score);
         score1 = (TextView)findViewById(R.id.score1);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String scorea =((TextView)findViewById(R.id.score)).getText().toString();
+        String scoreb =((TextView)findViewById(R.id.score1)).getText().toString();
+
+        Log.i(TAG,"onSaveInstanceState:");
+
+        outState.putString("teama_score",scorea);
+        outState.putString("teamb_score",scoreb);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String scorea = savedInstanceState.getString("teama_score");
+        String scoreb = savedInstanceState.getString("teamb_score");
+
+        Log.i(TAG,"onRestoreInstanceState:");
+
+        ((TextView)findViewById(R.id.score)).setText(scorea);
+        ((TextView)findViewById(R.id.score1)).setText(scoreb);
     }
 
     public void threePointA(View btn){
@@ -29,7 +55,7 @@ public class Main2Activity extends AppCompatActivity {
     public void twoPointA(View btn){
         if (btn.getId()==R.id.btn2){
             showScore(2);
-        }else{
+        }else {
             showScore1(2);
         }
     }

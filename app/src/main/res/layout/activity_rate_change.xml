@@ -55,4 +55,5 @@
         android:onClick="openOne"
         android:text="@string/btn_opencfg" />
 
+
 </LinearLayout>
