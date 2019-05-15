@@ -9,4 +9,10 @@
     <string name="btn_euro_label">Euro</string>
     <string name="btn_won_label">Won</string>
     <string name="rmb_hint">Input RMB</string>
+    <string name="btn_opencfg">Config</string>
+    <string name="btn_save_label">save</string>
+    <string name="menu_set">setting</string>
+    <string name="menu_set_label">setting</string>
+    <string name="label_open_list">OpenList</string>
+    <string name="rmb_hint_label">input RMB</string>
 </resources>

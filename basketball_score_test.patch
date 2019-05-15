@@ -1,0 +1,214 @@
+Index: app/src/main/java/com/yan/vicky/Main2Activity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/yan/vicky/Main2Activity.java	(date 1554293163014)
++++ app/src/main/java/com/yan/vicky/Main2Activity.java	(date 1554293163014)
+@@ -0,0 +1,60 @@
++package com.yan.vicky;
++
++import android.os.Bundle;
++import android.support.v7.app.AppCompatActivity;
++import android.util.Log;
++import android.view.View;
++import android.widget.TextView;
++
++public class Main2Activity extends AppCompatActivity {
++
++    TextView score;
++    TextView score1;
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.basket);
++
++        score = (TextView)findViewById(R.id.score);
++        score1 = (TextView)findViewById(R.id.score1);
++    }
++
++    public void threePointA(View btn){
++        if (btn.getId()==R.id.btn1){
++            showScore(3);
++        }else{
++            showScore1(3);
++        }
++    }
++    public void twoPointA(View btn){
++        if (btn.getId()==R.id.btn2){
++            showScore(2);
++        }else{
++            showScore1(2);
++        }
++    }
++    public void onePointA(View btn){
++        if (btn.getId()==R.id.btn3){
++            showScore(1);
++        }else{
++            showScore1(1);
++        }
++    }
++    public void resetA(View btn){
++        score.setText("0");
++        score1.setText("0");
++    }
++    private void showScore(int inc){
++        Log.i("show","inc="+inc);
++        String oldscore = (String)score.getText();
++        int newscore = Integer.parseInt(oldscore)+inc;
++        score.setText(""+newscore);
++    }
++
++    private void showScore1(int inc){
++        Log.i("show","inc="+inc);
++        String oldscore = (String)score1.getText();
++        int newscore = Integer.parseInt(oldscore)+inc;
++        score1.setText(""+newscore);
++    }
++}
+Index: app/src/main/res/layout/basket.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/basket.xml	(date 1554292780473)
++++ app/src/main/res/layout/basket.xml	(date 1554292780473)
+@@ -0,0 +1,138 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/forth"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    tools:context=".Main2Activity">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal">
++        <LinearLayout
++            android:layout_width="wrap_content"
++            android:layout_height="match_parent"
++            android:orientation="vertical"
++            android:layout_weight="1">
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="88dp"
++                android:layout_marginBottom="15dp"
++                android:gravity="center"
++                android:padding="10dp"
++                android:text="Team A"
++                android:textSize="25dp" />
++
++            <TextView
++                android:id="@+id/score"
++                android:layout_width="match_parent"
++                android:layout_height="100dp"
++                android:layout_marginBottom="15dp"
++                android:gravity="center"
++                android:padding="4dp"
++                android:text="0"
++                android:textSize="30dp" />
++
++            <Button
++                android:id="@+id/btn1"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_margin="8dp"
++                android:onClick="threePointA"
++                android:text="+3points"
++                tools:text="@string/lable_add1" />
++
++            <Button
++                android:id="@+id/btn2"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_margin="8dp"
++                android:onClick="twoPointA"
++                android:text="+2points"
++                tools:text="@string/lable_add2" />
++
++            <Button
++                android:id="@+id/btn3"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_margin="8dp"
++                android:onClick="onePointA"
++                android:text="+1point"
++                tools:text="@string/lable_add3" />
++        </LinearLayout>
++
++        <TextView
++            android:layout_width="2dp"
++            android:layout_marginLeft="8dp"
++            android:layout_marginRight="8dp"
++            android:layout_height="match_parent"
++            android:background="@color/colorPrimary"/>
++
++        <LinearLayout
++            android:layout_width="wrap_content"
++            android:layout_height="match_parent"
++            android:orientation="vertical"
++            android:layout_weight="1">
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="88dp"
++                android:layout_marginBottom="15dp"
++                android:gravity="center"
++                android:padding="10dp"
++                android:text="Team A"
++                android:textSize="25dp" />
++
++            <TextView
++                android:id="@+id/score1"
++                android:layout_width="match_parent"
++                android:layout_height="100dp"
++                android:layout_marginBottom="15dp"
++                android:gravity="center"
++                android:padding="4dp"
++                android:text="0"
++                android:textSize="30dp" />
++
++            <Button
++                android:id="@+id/btn4"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_margin="8dp"
++                android:onClick="threePointA"
++                android:text="+3points"
++                tools:text="@string/lable_add1" />
++
++            <Button
++                android:id="@+id/btn5"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_margin="8dp"
++                android:onClick="twoPointA"
++                android:text="+2points"
++                tools:text="@string/lable_add2" />
++
++            <Button
++                android:id="@+id/btn6"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_margin="8dp"
++                android:onClick="onePointA"
++                android:text="+1point"
++                tools:text="@string/lable_add3" />
++        </LinearLayout>
++    </LinearLayout>
++
++
++    <Button
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_gravity="center"
++        android:layout_margin="8dp"
++        android:onClick="resetA"
++        android:text="RESET" />
++
++
++</LinearLayout>

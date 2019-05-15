@@ -62,20 +62,15 @@ public class RateListActivity extends ListActivity implements Runnable{
         try {
             Thread.sleep(300);
             doc = Jsoup.connect("http://www.boc.cn/sourcedb/whpj/").get();
-            //doc = Jsoup.parse(html);
             Log.i(TAG,"run: "+ doc.title());
             Elements tables = doc.getElementsByTag("table");
-//            for(Element table : tables){
-//                Log.i(TAG,"run: table["+i+"]=" + table);
-//                i++;
-//            }
 
             Element table2 = tables.get(1);
-//            Log.i(TAG,"run: table6" + table6);
             Elements tds = table2.getElementsByTag("td");
             for(int i=0;i<tds.size();i+=8){
                 Element td1 = tds.get(i);
                 Element td2 = tds.get(i+5);
+
                 String str1 = td1.text();
                 String val = td2.text();
 
