@@ -16,7 +16,7 @@ public class RateManager {
         dbHelper = new DBHelper(context);
         TBNAME = DBHelper.TB_NAME;
     }
-
+//添加功能
     public void add(RateItem item){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -61,12 +61,13 @@ public class RateManager {
         db.close();
         return rateList;
     }
-
+//删除功能
     public void delete(int id){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.delete(TBNAME,"ID=?",new String[]{String.valueOf(id)});
         db.close();
     }
+    //更新功能
     public void update(RateItem item){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -75,7 +76,7 @@ public class RateManager {
         db.update(TBNAME,values,"ID=?", new String[]{String.valueOf(item.getId())});
         db.close();
     }
-
+//查找功能
     public  RateItem findById(int id){
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query(TBNAME,null,"ID=?",new String[]{String.valueOf(id)},null,null,null);

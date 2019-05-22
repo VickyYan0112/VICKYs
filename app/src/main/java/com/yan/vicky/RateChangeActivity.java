@@ -56,7 +56,7 @@ public class RateChangeActivity extends AppCompatActivity implements Runnable{
        wonRate=sharedPreferences.getFloat("won_rate",0.0f);
        updateData = sharedPreferences.getString("update_data","");
 
-       //获取当前系统时间
+       //获取当前时间
        Date today = Calendar.getInstance().getTime();
        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
        final String todayStr = sdf.format(today);

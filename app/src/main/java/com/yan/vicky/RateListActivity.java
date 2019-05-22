@@ -23,7 +23,7 @@ import java.util.List;
 
 public class RateListActivity extends ListActivity implements Runnable{
 
-    String data[] = {"wait..."};
+    String data[] = {"wait....."};
     Handler handler;
     private final String DATE_SP_KEY = "lastRateDateStr";
     private  String logDate = "";

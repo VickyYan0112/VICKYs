@@ -10,8 +10,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "myrate.db";
     public static final String TB_NAME = "tb_rates";
 
-    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,
-                    int version){
+    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
         super(context,name,factory,version);
     }
     public DBHelper(Context context){

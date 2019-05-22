@@ -11,7 +11,7 @@ public class RateItem {
         this.curName = "";
     }
 
-    public RateItem(String curName, String curRate) {
+    public RateItem(String curRate, String curName) {
         this.curName = curName;
         this.curRate = curRate;
     }
